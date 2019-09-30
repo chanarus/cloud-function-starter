@@ -10,3 +10,10 @@ node_modules
 
 # OS metadata
 .DS_Store
+
+# Test Coverage
+coverage
+.nyc_output
+
+#JS Builds
+lib

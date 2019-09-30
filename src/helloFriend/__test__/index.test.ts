@@ -1,10 +1,10 @@
-import assert from 'assert';
-import sinon from 'sinon';
-import uuid from 'uuid';
+import * as assert from 'assert';
+import * as sinon from 'sinon';
+import * as uuid from 'uuid';
 
-import { helloWorld } from '..';
+import { helloFriend } from '..';
 
-it('helloHttp: should print hello world', () => {
+it('helloFriend: should print Hello Friend', () => {
   // Mock ExpressJS 'req' and 'res' parameters
   const req = {
     query: {},
@@ -13,14 +13,14 @@ it('helloHttp: should print hello world', () => {
   const res = { send: sinon.stub() };
 
   // Call tested function
-  helloWorld(req, res);
+  helloFriend(req, res);
 
   // Verify behavior of tested function
   assert.ok(res.send.calledOnce);
-  assert.deepStrictEqual(res.send.firstCall.args, ['Hello World']);
+  assert.deepStrictEqual(res.send.firstCall.args, ['Hello Friend']);
 });
 
-it('helloHttp: should print a name', () => {
+it('helloFriend: should print a name', () => {
   // Mock ExpressJS 'req' and 'res' parameters
   const name = uuid.v4();
   const req = {
@@ -30,7 +30,7 @@ it('helloHttp: should print a name', () => {
   const res = { send: sinon.stub() };
 
   // Call tested function
-  helloWorld(req, res);
+  helloFriend(req, res);
 
   // Verify behavior of tested function
   assert.ok(res.send.calledOnce);
